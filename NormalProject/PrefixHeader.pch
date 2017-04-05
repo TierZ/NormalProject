@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  NormalProject
+//
+//  Created by lf on 16/10/8.
+//  Copyright © 2016年 BAT. All rights reserved.
+//
+/**
+ *  
+ 在开发过程中，可以把那些在整个工程中，都广泛使用的头文件,包含在该文件下。编译器会自动将pch文件中的头文件，添加到所有的源文件中去。这样在需要使用相关类的时候不需要使用import就可以直接使用头文件中的内容，很大程度上带来了编程的便利性。但潜在的也带来了一些问题，这可能是Xcode6中默认不再创建pch的原因吧。
+ 
+ Xcode6之后，刚才说的那些美好都没有了~原因是什么呢？
+ 我根据stackoverflow的一个观点，总结如下：
+ 
+ 因为module，我们没有了#import <Cocoa/Cocoa.h>的需求
+ 你在prefix header中写的代码是没有必要的。哪儿需要import,你就在那儿写。把你的定义写到他们所属的文件中去。把你的宏，哎，除非没有别的路，还是停止写宏吧。如果，哥们儿，你实在要写宏，那你就把它们放在一个头文件中引入。
+ 只有当一个文件又大，而且几乎整个程序都要用(就像Foundation.h)，我们才有必要用prefix header。但是矛盾来了，如果你有这么个文件，它又大又无处不在，你是不是该想想，你这是啥架构啊。
+ 最重要的原因，prefix header导致代码很难重用，而且会导致一些莫名其妙的编译问题。
+ *
+ **/
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Macro.h"
+
+#import "BATCategory.h"
+
+#import "YYKit.h"
+#import "Masonry.h"
+
+
+#endif /* PrefixHeader_pch */

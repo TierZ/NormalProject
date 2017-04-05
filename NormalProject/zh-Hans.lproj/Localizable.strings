@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  NormalProject
+
+  Created by lf on 2017/2/7.
+  Copyright © 2017年 BAT. All rights reserved.
+*/
+"LS_TabBar0" = "隐私权限";
+"LS_TabBar1" = "三方分享";
+"LS_TabBar2" = "三方登录";
+"LS_TabBar3" = "三方支付";

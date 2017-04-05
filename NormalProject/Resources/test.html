@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function callToOC()
+            {
+                document.getElementById("demo").innerHTML="js will call to oc's function sayhellow";
+                window.webkit.messageHandlers.sayhello.postMessage("js will call oc function named sayhello");
+            }
+        function say() {
+            alert("Who call me? I'm js's function named say(), are you ? oc?");
+        }
+        </script>
+    </head>
+    <body>
+        <h1>hello world</h1>
+        <p id="demo"></p>
+        <button onclick="callToOC()">say hello</button>
+    </body>
+</html>

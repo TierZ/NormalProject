@@ -1,0 +1,7 @@
+/**
+*
+* 有LaunchScreen.storyboard App打开的时候就先加载它
+* 若不用它 就删除 或 改个名字 App就会加载 Launch images source 的资源了
+* 若让launch.sb 不显示statusBar 在plist 中添加 Status bar is initially hidden -> YES
+*
+ **/
